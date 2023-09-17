@@ -16,7 +16,7 @@ int print_Astr(va_list prtf_ptr)
 	int len = 0;
 
 	if (string_out == NULL)
-		string_out = "(null)";
+		string_out = "";
 
 	while (string_out[len] != '\0')
 		len++;
@@ -56,10 +56,13 @@ int _printf(const char *format, ...)
 	int i = 0, char_count = 0;
 	va_list prtf_ptr;
 
-	va_start(prtf_ptr, format);
-
-	if (format == NULL)
+	if (format == NULL || *format == '\0')
 		return (-1);
+	if (*format == '%' && *(format + 1) == '\0')
+		return (-1);
+
+
+	va_start(prtf_ptr, format);
 
 	while (format[i] != '\0')
 	{
@@ -81,7 +84,7 @@ int _printf(const char *format, ...)
 					break;
 
 				default:
-				    write(1, &format[i - 1], 1);
+					write(1, &format[i - 1], 1);
 					write(1, &format[i], 1);
 					char_count += 2;
 			}
