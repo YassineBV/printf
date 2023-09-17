@@ -16,7 +16,7 @@ int print_Astr(va_list prtf_ptr)
 	int len = 0;
 
 	if (string_out == NULL)
-		string_out = "";
+		string_out = "(null)";
 
 	while (string_out[len] != '\0')
 		len++;
