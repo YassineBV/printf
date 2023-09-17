@@ -59,7 +59,7 @@ int _printf(const char *format, ...)
 	va_start(prtf_ptr, format);
 
 	if (format == NULL)
-		return (1);
+		return (-1);
 
 	while (format[i] != '\0')
 	{
@@ -81,8 +81,7 @@ int _printf(const char *format, ...)
 					break;
 
 				default:
-				break;
-
+					return (-1);
 			}
 		}
 		else
