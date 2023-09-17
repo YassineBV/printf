@@ -1,6 +1,6 @@
 #include <unistd.h>
 #include <stdarg.h>
-#include "custom_prtf.h"
+#include "main.h"
 
 int print_Astr(va_list prtf_ptr);
 int print_c(va_list prtf_ptr);
