@@ -95,11 +95,3 @@ int _printf(const char *format, ...)
 	va_end(prtf_ptr);
 	return (char_count);
 }
-int main(void)
-{
-	_printf("this is Yassine and Kenneth custom function\n");
-	_printf("%c\n", 'Z');
-	_printf("%s\n", "alx is the best");
-	_printf("%%\n");
-	return (0);
-}
