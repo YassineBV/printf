@@ -80,7 +80,7 @@ int _printf(const char *format, ...)
 					char_count += print_percent();
 					break;
 
-				  default:
+				default:
 				    write(1, &format[i - 1], 1);
 					write(1, &format[i], 1);
 					char_count += 2;
