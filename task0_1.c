@@ -13,7 +13,6 @@ int print_Astr(va_list prtf_ptr)
 
 	if (string_out == NULL)
 		string_out = "(null)";
-
 	while (string_out[len] != '\0')
 		len++;
 	write(1, string_out, len);
@@ -21,7 +20,7 @@ int print_Astr(va_list prtf_ptr)
 }
 /**
  * print_c - Print a character %c
- * @prtf_ptr: The pointer va_list .
+ * @prtf_ptr: The pointer va_list.
  * Return: the Number of characters printed.
  */
 int print_c(va_list prtf_ptr)
@@ -56,9 +55,7 @@ int _printf(const char *format, ...)
 		return (-1);
 	if (*format == '%' && *(format + 1) == '\0')
 		return (-1);
-
 	va_start(prtf_ptr, format);
-
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
