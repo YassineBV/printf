@@ -1,7 +1,6 @@
 #include <unistd.h>
 #include <stdarg.h>
 #include "main.h"
-
 /**
  * print_Astr - function that Print string
  * @prtf_ptr: va_list pointer.
@@ -58,7 +57,6 @@ int _printf(const char *format, ...)
 	if (*format == '%' && *(format + 1) == '\0')
 		return (-1);
 
-
 	va_start(prtf_ptr, format);
 
 	while (format[i] != '\0')
@@ -100,4 +98,3 @@ int _printf(const char *format, ...)
 	va_end(prtf_ptr);
 	return (char_count);
 }
-
