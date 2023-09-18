@@ -2,16 +2,11 @@
 #include <stdarg.h>
 #include "main.h"
 
-int print_Astr(va_list prtf_ptr);
-int print_c(va_list prtf_ptr);
-int print_percent(void);
-int print_deg(va_list prtf_ptr);
-
 /**
-* print_Astr - function that Print string
-* @prtf_ptr: va_list pointer.
-* Return: return the Number of characters printed.
-*/
+ * print_Astr - function that Print string
+ * @prtf_ptr: va_list pointer.
+ * Return: return the Number of characters printed.
+ */
 int print_Astr(va_list prtf_ptr)
 {
 	char *string_out = va_arg(prtf_ptr, char *);
@@ -35,19 +30,6 @@ int print_c(va_list prtf_ptr)
 	char one_c = va_arg(prtf_ptr, int);
 
 	write(1, &one_c, 1);
-	return (1);
-}
-/**
- * print_deg - function Print integer.
- * @prtf_ptr: A va_list pointer.
- *
- * Return: Number of characters printed.
- */
-int print_deg(va_list prtf_ptr)
-{
-	int h = va_arg(prtf_ptr, int);
-
-	write(1, &h, 1);
 	return (1);
 }
 /**
@@ -99,7 +81,7 @@ int _printf(const char *format, ...)
 					break;
 				case 'd':
 				case 'i':
-					char_count += print_deg(prtf_ptr);
+				    char_count += print_int(prtf_ptr);
 					break;
 
 				default:
